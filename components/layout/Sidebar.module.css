@@ -1,0 +1,53 @@
+.sidebar {
+  position: sticky;
+  top: 40px;
+  padding: 24px;
+  background-color: var(--white);
+  border: 2px solid var(--text-black);
+  width: 264px;
+  height: fit-content;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+
+  font-family: var(--font-darumadrop-one);
+  font-weight: 400;
+
+  @media (width < 768px) {
+    width: 100%;
+    padding: 16px;
+    gap: 16px;
+  }
+}
+
+.title {
+  font-size: 32px;
+  letter-spacing: 0.01em;
+}
+
+.texts {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.text {
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.small {
+  font-size: 16px;
+}
+
+.text a {
+  text-decoration: underline;
+  transition: opacity 0.2s ease;
+}
+
+.link a:hover {
+  opacity: 0.7;
+}
