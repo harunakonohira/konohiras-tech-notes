@@ -11,7 +11,7 @@ export default function Header() {
           src="/logo.svg"
           alt="konohira's tech notes"
           width="228"
-          height="21"
+          height="20"
         />
       </Link>
     </header>

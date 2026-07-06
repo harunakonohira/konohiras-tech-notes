@@ -1,10 +1,11 @@
-import styles from "./page.module.css"
+import styles from "./page.module.css";
+import Sidebar from "@/components/layout/Sidebar";
 
 export default function home() {
   return (
-    <>
-      {/* サイドバー */}
+    <div className={styles.twoColumn}>
+      <Sidebar />
       <main className={styles.main}></main>
-    </>
-  )
+    </div>
+  );
 }
