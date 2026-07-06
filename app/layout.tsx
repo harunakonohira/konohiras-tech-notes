@@ -5,8 +5,8 @@ import {
   Space_Mono,
 } from "next/font/google";
 import "./globals.css";
-import Header from "./components/layout/Header";
-import Footer from "./components/layout/Footer";
+import Header from "../components/layout/Header";
+import Footer from "../components/layout/Footer";
 
 const darumadropone = Darumadrop_One({
   weight: ["400"],
