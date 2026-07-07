@@ -2,6 +2,7 @@ import styles from "./page.module.css";
 import Sidebar from "@/components/layout/Sidebar";
 import Card from "@/components/ui/Card";
 import ButtonBlack from "@/components/ui/ButtonBlack";
+import CategoriesSection from "@/components/layout/CategoriesSection";
 
 export default function home() {
   return (
@@ -45,7 +46,7 @@ export default function home() {
             <ButtonBlack href="/" text="view all" />
           </div>
         </section>
-        <div className={styles.category}></div>
+        <CategoriesSection />
       </main>
     </div>
   );
