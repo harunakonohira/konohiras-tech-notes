@@ -1,5 +1,7 @@
 import styles from "./page.module.css";
 import Sidebar from "@/components/layout/Sidebar";
+import Card from "@/components/ui/Card";
+import ButtonBlack from "@/components/ui/ButtonBlack";
 
 export default function home() {
   return (
@@ -17,7 +19,32 @@ export default function home() {
             すみません、メモはにほんごでかきます。
           </p>
         </section>
-        <div className={styles.new}></div>
+        <section className={styles.new}>
+          <h2 className={styles.h2}>new notes</h2>
+          <div className={styles.contents}>
+            <Card
+              href="/"
+              title="タイトルタイトルタイトルタイトルタイトルタイトルタイトルタイトルタイトルタイトルタイトルタイトル"
+              text="こういう時に開きたいみたいな文章を書いておけるところ"
+              date="2026.07.06"
+            />
+            <Card
+              href="/"
+              title="タイトルタイトルタイトルタイトルタイトルタイトル"
+              text="こういう時に開きたいみたいな文章を書いておけるところ"
+              date="2026.07.06"
+            />
+            <Card
+              href="/"
+              title="タイトルタイトルタイトル"
+              text="こういう時に開きたいみたいな文章を書いておけるところこういう時に開きたいみたいな文章を書いておけるところこういう時に開きたいみたいな文章を書いておけるところこういう時に開きたいみたいな文章を書いておけるところ"
+              date="2026.07.06"
+            />
+          </div>
+          <div className={styles.newButton}>
+            <ButtonBlack href="/" text="view all" />
+          </div>
+        </section>
         <div className={styles.category}></div>
       </main>
     </div>
