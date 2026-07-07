@@ -1,0 +1,15 @@
+.buttonBlack {
+  display: block;
+  padding: 8px;
+  border-radius: 8px 8px 0 0;
+  border-top: 2px solid var(--text-black);
+  border-left: 2px solid var(--text-black);
+  border-right: 2px solid var(--text-black);
+  line-height: 1;
+  font-size: 20px;
+  transition: transform 0.2s ease;
+}
+
+.buttonBlack:hover {
+  transform: scale(1.1);
+}
