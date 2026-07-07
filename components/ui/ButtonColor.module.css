@@ -5,6 +5,9 @@
   line-height: 1;
   font-size: 20px;
   transition: transform 0.2s ease;
+  border-top: 2px solid;
+  border-left: 2px solid;
+  border-right: 2px solid;
 }
 
 .buttonColor:hover {
@@ -12,42 +15,26 @@
 }
 
 .buttonColor:nth-child(8n + 1) {
-  border-top: 2px solid red;
-  border-left: 2px solid red;
-  border-right: 2px solid red;
+  border-color: red;
 }
 .buttonColor:nth-child(8n + 2) {
-  border-top: 2px solid orange;
-  border-left: 2px solid orange;
-  border-right: 2px solid orange;
+  border-color: orange;
 }
 .buttonColor:nth-child(8n + 3) {
-  border-top: 2px solid yellow;
-  border-left: 2px solid yellow;
-  border-right: 2px solid yellow;
+  border-color: yellow;
 }
 .buttonColor:nth-child(8n + 4) {
-  border-top: 2px solid green;
-  border-left: 2px solid green;
-  border-right: 2px solid green;
+  border-color: green;
 }
 .buttonColor:nth-child(8n + 5) {
-  border-top: 2px solid blue;
-  border-left: 2px solid blue;
-  border-right: 2px solid blue;
+  border-color: blue;
 }
 .buttonColor:nth-child(8n + 6) {
-  border-top: 2px solid navy;
-  border-left: 2px solid navy;
-  border-right: 2px solid navy;
+  border-color: navy;
 }
 .buttonColor:nth-child(8n + 7) {
-  border-top: 2px solid purple;
-  border-left: 2px solid purple;
-  border-right: 2px solid purple;
+  border-color: purple;
 }
 .buttonColor:nth-child(8n) {
-  border-top: 2px solid pink;
-  border-left: 2px solid pink;
-  border-right: 2px solid pink;
+  border-color: pink;
 }
