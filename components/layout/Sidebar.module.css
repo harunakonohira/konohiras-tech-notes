@@ -48,6 +48,6 @@
   transition: opacity 0.2s ease;
 }
 
-.link a:hover {
+.text a:hover {
   opacity: 0.7;
 }
