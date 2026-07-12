@@ -6,7 +6,10 @@ import CategoriesSection from "@/components/layout/CategoriesSection";
 import { getArticle } from "@/libs/blog";
 
 export default async function home() {
-  const articles = await getArticle(3);
+
+  const limit = 3;
+  const { contents } = await getArticle(limit);
+
 
   return (
     <div className={styles.twoColumn}>
@@ -26,7 +29,7 @@ export default async function home() {
         <section className={styles.new}>
           <h2 className={styles.h2}>new notes</h2>
           <div className={styles.contents}>
-            {articles.map((article) => {
+            {contents.map((article) => {
               const d = new Date(article.publishedAt);
               const date = `${d.getFullYear()}.${d.getMonth() + 1}.${d.getDate()}`;
               return (
