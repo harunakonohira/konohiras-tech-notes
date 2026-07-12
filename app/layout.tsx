@@ -27,9 +27,25 @@ const spacemono = Space_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://konohiras-tech-notes.vercel.app"),
   title: "konohira's tech notes",
   description:
     "Things I thought I might forget, items for copy-pasting, things I found difficult, new things I learned, things I came to understand, and so on.",
+  openGraph: {
+    title: "konohira's tech notes",
+    description: "Things I thought I might forget, items for copy-pasting, things I found difficult, new things I learned, things I came to understand, and so on.",
+    url: "https://konohiras-tech-notes.vercel.app/",
+    siteName: "konohira's tech notes",
+    images: [
+      {
+        url: "/ogp.png",
+        width: 1200,
+        height: 630,
+      },
+    ],
+    locale: "ja_JP",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
