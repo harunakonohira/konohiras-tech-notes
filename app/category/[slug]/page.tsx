@@ -1,22 +1,33 @@
-import styles from "../../Blog.module.css";
+import styles from "../../blog/Blog.module.css";
 import Sidebar from "@/components/layout/Sidebar";
 import Card from "@/components/ui/Card";
 import ButtonBlack from "@/components/ui/ButtonBlack";
 import CategoriesSection from "@/components/layout/CategoriesSection";
-import { getArticle } from "@/libs/blog";
+import { getCategoryBySlug, getArticleByCategory } from "@/libs/blog";
 
-export default async function Blog({
+export default async function Category({
+  params,
   searchParams,
 }: {
+  params: Promise<{ slug: string }>;
   searchParams: Promise<{ page?: string }>;
 }) {
+  const { slug } = await params;
   const { page } = await searchParams;
   const currentPage = Number(page) || 1;
-
   const limit = 9;
   const offset = (currentPage - 1) * limit;
 
-  const { contents, totalCount } = await getArticle(limit, offset);
+  // 1. slug からカテゴリーを特定
+  const category = await getCategoryBySlug(slug);
+  console.log("category:", category);
+
+  // 2. そのカテゴリーの id で記事を絞る
+  const { contents, totalCount } = await getArticleByCategory(
+    category.id,
+    limit,
+    offset,
+  );
 
   const totalPages = Math.ceil(totalCount / limit);
 
@@ -25,7 +36,7 @@ export default async function Blog({
       <Sidebar />
       <main className={styles.main}>
         <section className={styles.new}>
-          <h2 className={styles.h2}>view all notes</h2>
+          <h2 className={styles.h2}>category → {category.name}</h2>
           <div className={styles.contents}>
             {contents.map((article) => {
               const d = new Date(article.publishedAt);
@@ -44,13 +55,13 @@ export default async function Blog({
           <div className={styles.buttons}>
             {currentPage > 1 && (
               <ButtonBlack
-                href={`/blog?page=${currentPage - 1}`}
+                href={`/category/${slug}?page=${currentPage - 1}`}
                 text="<- before page"
               />
             )}
             {currentPage < totalPages && (
               <ButtonBlack
-                href={`/blog?page=${currentPage + 1}`}
+                href={`/category/${slug}?page=${currentPage + 1}`}
                 text="next page ->"
               />
             )}
