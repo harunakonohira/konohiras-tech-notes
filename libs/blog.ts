@@ -40,3 +40,10 @@ export async function getArticleBySlug(slug: string) {
   });
   return contents[0];
 }
+
+export async function getAllCategories() {
+  const { contents } = await client.getList<Category>({
+    endpoint: "categories",
+  });
+  return contents;
+}
