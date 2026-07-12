@@ -60,3 +60,8 @@
     flex-direction: column;
   }
 }
+
+.buttons {
+  display: flex;
+  gap: 40px;
+}

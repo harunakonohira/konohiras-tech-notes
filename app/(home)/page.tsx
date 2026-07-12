@@ -3,8 +3,14 @@ import Sidebar from "@/components/layout/Sidebar";
 import Card from "@/components/ui/Card";
 import ButtonBlack from "@/components/ui/ButtonBlack";
 import CategoriesSection from "@/components/layout/CategoriesSection";
+import { getArticle } from "@/libs/blog";
 
-export default function home() {
+export default async function home() {
+
+  const limit = 3;
+  const { contents } = await getArticle(limit);
+
+
   return (
     <div className={styles.twoColumn}>
       <Sidebar />
@@ -23,27 +29,22 @@ export default function home() {
         <section className={styles.new}>
           <h2 className={styles.h2}>new notes</h2>
           <div className={styles.contents}>
-            <Card
-              href="/"
-              title="タイトルタイトルタイトルタイトルタイトルタイトルタイトルタイトルタイトルタイトルタイトルタイトル"
-              text="こういう時に開きたいみたいな文章を書いておけるところ"
-              date="2026.07.06"
-            />
-            <Card
-              href="/"
-              title="タイトルタイトルタイトルタイトルタイトルタイトル"
-              text="こういう時に開きたいみたいな文章を書いておけるところ"
-              date="2026.07.06"
-            />
-            <Card
-              href="/"
-              title="タイトルタイトルタイトル"
-              text="こういう時に開きたいみたいな文章を書いておけるところこういう時に開きたいみたいな文章を書いておけるところこういう時に開きたいみたいな文章を書いておけるところこういう時に開きたいみたいな文章を書いておけるところ"
-              date="2026.07.06"
-            />
+            {contents.map((article) => {
+              const d = new Date(article.publishedAt);
+              const date = `${d.getFullYear()}.${d.getMonth() + 1}.${d.getDate()}`;
+              return (
+                <Card
+                  key={article.id}
+                  href={`/blog/${article.slug}`}
+                  title={article.title}
+                  text={article.excerpt}
+                  date={date}
+                />
+              );
+            })}
           </div>
           <div className={styles.newButton}>
-            <ButtonBlack href="/" text="view all" />
+            <ButtonBlack href="/blog" text="view all" />
           </div>
         </section>
         <CategoriesSection />

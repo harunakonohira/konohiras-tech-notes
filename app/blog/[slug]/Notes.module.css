@@ -61,7 +61,7 @@
   flex-direction: column;
   gap: 24px;
   line-height: 1.8;
-  color: var(--text-gray);
+  color: var(--text-black);
 }
 
 .content a {
@@ -74,9 +74,38 @@
   opacity: 0.7;
 }
 
+.content pre {
+  background-color: var(--text-black);
+  color: var(--white);
+  padding: 8px 16px;
+  line-height: 1.2;
+  font-family: var(--font-space-mono);
+  margin: 0;
+  border-radius: 4px;
+}
+
+.content p code {
+  background-color: var(--text-black);
+  color: var(--white);
+  padding: 1px 4px;
+  line-height: 1.2;
+  font-family: var(--font-space-mono);
+  margin: 0;
+  border-radius: 4px;
+}
+
+.content figure {
+  margin: 0;
+}
+
+.content img {
+  width: 100%;
+}
+
 .date {
   color: var(--text-gray);
   padding-bottom: 8px;
   border-bottom: 1px solid var(--border);
   text-align: right;
 }
+
