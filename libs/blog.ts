@@ -4,7 +4,7 @@ import { Article, Category } from "./types";
 export async function getArticle(limit: number, offset: number = 0) {
   const { contents, totalCount } = await client.getList<Article>({
     endpoint: "blog",
-    queries: { limit, offset },
+    queries: { limit, offset, orders: "-publishedAt" },
   });
   return { contents, totalCount };
 }
