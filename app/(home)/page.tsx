@@ -5,11 +5,11 @@ import ButtonBlack from "@/components/ui/ButtonBlack";
 import CategoriesSection from "@/components/layout/CategoriesSection";
 import { getArticle } from "@/libs/blog";
 
-export default async function home() {
+export const revalidate = 60;
 
+export default async function home() {
   const limit = 3;
   const { contents } = await getArticle(limit);
-
 
   return (
     <div className={styles.twoColumn}>
