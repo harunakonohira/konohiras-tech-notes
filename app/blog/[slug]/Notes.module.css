@@ -115,7 +115,7 @@
   display: flex;
   flex-direction: column;
   gap: 24px;
-  line-height: 1.8;
+  line-height: 1.85;
   color: var(--text-black);
 
   @media (width < 1024px) {
@@ -137,7 +137,7 @@
   background-color: var(--text-black);
   color: var(--white);
   padding: 8px 16px;
-  line-height: 1.2;
+  line-height: 1.25;
   font-family: var(--font-space-mono);
   margin: 0;
   border-radius: 4px;
@@ -146,16 +146,18 @@
   white-space: pre-wrap;
 }
 
-.content p code {
+.content p code,
+.content li code  {
   background-color: var(--text-black);
   color: var(--white);
   padding: 1px 4px;
-  line-height: 1.2;
+  line-height: 1.25;
   font-family: var(--font-space-mono);
   margin: 0;
   border-radius: 4px;
   width: 100%;
 }
+
 
 .content figure {
   margin: 0;
@@ -163,6 +165,23 @@
 
 .content img {
   width: 100%;
+}
+
+.content h2 {
+  margin-top: 24px;
+  padding: 4px 0;
+  border-top: 2px dashed var(--border);
+  border-bottom: 2px dashed var(--border);
+}
+
+.content ul {
+  list-style: disc;
+  margin-left: 24px;
+}
+
+.content ol {
+  list-style: decimal;
+  margin-left: 24px;
 }
 
 .date {
